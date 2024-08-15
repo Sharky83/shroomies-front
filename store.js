@@ -100,8 +100,16 @@ function updateCartTotal() {
         const quantity = quantityElement.value;
         total += price * quantity;
     });
-    document.querySelector('.cart-total-price').innerText = '£' + total.toFixed(2);
-    document.querySelector('.basket-total-price').innerText = total.toFixed(2);
+
+    const cartTotalPriceElement = document.querySelector('.cart-total-price');
+    if (cartTotalPriceElement) {
+        cartTotalPriceElement.innerText = '£' + total.toFixed(2);
+    }
+
+    const basketTotalPriceElement = document.querySelector('.basket-total-price');
+    if (basketTotalPriceElement) {
+        basketTotalPriceElement.innerText = total.toFixed(2);
+    }
 }
 
 function openCartModal() {
@@ -141,12 +149,14 @@ function saveCartToLocalStorage() {
         const quantity = cartRow.querySelector('.cart-quantity-input').value;
         cart.push({ title, price, imageSrc, quantity });
     });
+    console.log('Saving cart to local storage:', cart); // Debug log
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // Load cart data from local storage
 function loadCartFromLocalStorage() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log('Loading cart from local storage:', cart); // Debug log
     cart.forEach(item => {
         addItemToCart(item.title, item.price, item.imageSrc);
         const cartItems = document.querySelector('.cart-items');

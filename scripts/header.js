@@ -24,13 +24,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("cart-modal");
   const closeButton = document.getElementsByClassName("close")[0];
 
-  basketButton.addEventListener("click", function () {
-    modal.style.display = "block";
-  });
+  if (basketButton) {
+    basketButton.addEventListener("click", function () {
+      if (modal) {
+        modal.style.display = "block";
+      } else {
+        console.error('Modal element not found');
+      }
+    });
+  } else {
+    console.error('Basket button element not found');
+  }
 
-  closeButton.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
+  if (closeButton) {
+    closeButton.addEventListener("click", function () {
+      if (modal) {
+        modal.style.display = "none";
+      } else {
+        console.error('Modal element not found');
+      }
+    });
+  } else {
+    console.error('Close button element not found');
+  }
 
   window.addEventListener("click", function (event) {
     if (event.target == modal) {
