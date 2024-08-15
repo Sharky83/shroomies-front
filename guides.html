@@ -1,75 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Generics | Store</title>
-        <meta name="description" content="This is the description">
-        <link rel="stylesheet" href="stylesTemp.css">
-        <script defer src="./scriptTemp.js" async></script>
-    </head>
-    <body>
-        <header class="main-header">
-            <nav class="nav">
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./guides.html">Guides</a></li>
-                    <li><a href="./store.html">Store</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./blog.html">Blog</a></li>
+  <head>
+    <title>The Generics | Store</title>
+    <meta name="description" content="This is the description" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="./script.js" async></script>
+  </head>
+  <body>
+    <header id="app-header" class="main-header">
+      <script defer src="./scripts/header.js"></script>
+    </header>
+    <section class="container content-section">
+      <h2>Guides will go here</h2>
+    </section>
 
-                </ul>
-            </nav>
-            <h1 class="shop-name">The Shroomies</h1>
-            <button type="button" class="btn btn-header" id="cart-button">Basket</button>
-        </header>
-        <section class="container content-section">
-
-            <h2>Guides will go here</h2>
-         
-
-
-
-        </section>
-
-        <!-- Modal -->
-        <div id="cart-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 class="section-header">CART</h2>
-                <div class="cart-row">
-                    <span class="cart-item cart-header cart-column">ITEM</span>
-                    <span class="cart-price cart-header cart-column">PRICE</span>
-                    <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-                </div>
-                <div class="cart-items"></div>
-                <div class="cart-total">
-                    <strong class="cart-total-title">Total</strong>
-                    <span class="cart-total-price">£0</span>
-                </div>
-                <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-            </div>
+    <!-- Modal -->
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="section-header">CART</h2>
+        <div class="cart-row">
+          <span class="cart-item cart-header cart-column">ITEM</span>
+          <span class="cart-price cart-header cart-column">PRICE</span>
+          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
         </div>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+          <strong class="cart-total-title">Total</strong>
+          <span class="cart-total-price">£0</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">
+          PURCHASE
+        </button>
+      </div>
+    </div>
 
-        <footer class="main-footer">
-            <div class="container main-footer-container">
-                <h3 class="shop-name">The Shroomies</h3>
-                <ul class="nav footer-nav">
-                    <li>
-                        <a href="https://www.youtube.com" target="_blank">
-                            <img src="./images/Youtube-Logo.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.spotify.com" target="_blank">
-                            <img src="./images/Spotify-Logo.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com" target="_blank">
-                            <img src="./images/Facebook-Logo.png">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-    </body>
+    <footer id="app-footer" class="main-footer">
+      <script defer src="./scripts/footer.js"></script>
+    </footer>
+  </body>
 </html>
