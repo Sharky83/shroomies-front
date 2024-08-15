@@ -12,19 +12,19 @@ document.addEventListener("DOMContentLoaded", function () {
             </ul>
         </nav>
         <h1 class="shop-name">The Shroomies</h1>
-        <button class="btn btn-primary basket-button" type="button">
-         Basket Total: £<span class="basket-total-price">0.00</span>
+       <button id="basket-button" class="btn btn-primary basket-button" type="button">
+      Basket Total: £<span class="basket-total-price">0.00</span>
     </button>
     `;
 
   header.innerHTML = headerContent;
 
   // Modal functionality
-  const cartButton = document.getElementById("cart-button");
+  const basketButton = document.getElementById("basket-button");
   const modal = document.getElementById("cart-modal");
   const closeButton = document.getElementsByClassName("close")[0];
 
-  cartButton.addEventListener("click", function () {
+  basketButton.addEventListener("click", function () {
     modal.style.display = "block";
   });
 

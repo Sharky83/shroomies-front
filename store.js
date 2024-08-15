@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     removeCartItemButtons.forEach(button => {
         button.addEventListener('click', removeCartItem);
     });
+
+    const basketButton = document.getElementById('basket-button');
+    if (basketButton) {
+        basketButton.addEventListener('click', openCartModal);
+    }
 });
 
 function addToCartClicked(event) {
@@ -23,7 +28,6 @@ function addToCartClicked(event) {
     const price = shopItem.querySelector('.shop-item-price').innerText;
     const imageSrc = shopItem.querySelector('.shop-item-image').src;
     addItemToCart(title, price, imageSrc);
-    openCartModal();
     updateCartTotal();
 }
 
