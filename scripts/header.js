@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const header = document.getElementById('app-header');
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.getElementById("app-header");
 
-    const headerContent = `
+  const headerContent = `
         <nav class="nav">
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -12,27 +12,29 @@ document.addEventListener('DOMContentLoaded', function() {
             </ul>
         </nav>
         <h1 class="shop-name">The Shroomies</h1>
-        <button type="button" class="btn btn-header" id="cart-button">Basket <span id="cart-total">£0.00</span></button>
+        <button class="btn btn-primary basket-button" type="button">
+         Basket Total: £<span class="basket-total-price">0.00</span>
+    </button>
     `;
 
-    header.innerHTML = headerContent;
+  header.innerHTML = headerContent;
 
-    // Modal functionality
-    const cartButton = document.getElementById('cart-button');
-    const modal = document.getElementById('cart-modal');
-    const closeButton = document.getElementsByClassName('close')[0];
+  // Modal functionality
+  const cartButton = document.getElementById("cart-button");
+  const modal = document.getElementById("cart-modal");
+  const closeButton = document.getElementsByClassName("close")[0];
 
-    cartButton.addEventListener('click', function() {
-        modal.style.display = 'block';
-    });
+  cartButton.addEventListener("click", function () {
+    modal.style.display = "block";
+  });
 
-    closeButton.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
+  closeButton.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
 
-    window.addEventListener('click', function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
 });
