@@ -11,30 +11,31 @@
       <script defer src="./scripts/header.js"></script>
     </header>
 
-    <section class="container content-section">
-      <h2>Blog will go here</h2>
-    </section>
-
-    <!-- Modal -->
-    <div id="cart-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 class="section-header">CART</h2>
-        <div class="cart-row">
-          <span class="cart-item cart-header cart-column">ITEM</span>
-          <span class="cart-price cart-header cart-column">PRICE</span>
-          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    <main class="main-content">
+      <section class="container content-section">
+        <h2>Blog will go here</h2>
+      </section>
+      <!-- Modal -->
+      <div id="cart-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 class="section-header">CART</h2>
+          <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+          </div>
+          <div class="cart-items"></div>
+          <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">£0</span>
+          </div>
+          <button class="btn btn-primary btn-purchase" type="button">
+            PURCHASE
+          </button>
         </div>
-        <div class="cart-items"></div>
-        <div class="cart-total">
-          <strong class="cart-total-title">Total</strong>
-          <span class="cart-total-price">£0</span>
-        </div>
-        <button class="btn btn-primary btn-purchase" type="button">
-          PURCHASE
-        </button>
       </div>
-    </div>
+    </main>
 
     <footer id="app-footer" class="main-footer">
       <script defer src="./scripts/footer.js"></script>
