@@ -1,45 +1,68 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>The Generics | Store</title>
-    <meta name="description" content="This is the description" />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="./store.js" async></script>
-  </head>
-  <main class="main-content">
-    <body>
-      <header id="app-header" class="main-header">
-        <script defer src="./scripts/header.js"></script>
-      </header>
-      <main class="main-content">
-        <section class="container content-section">
-          <h2>Guides will go here</h2>
-        </section>
-      </main>
-      <!-- Modal -->
-      <div id="cart-modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2 class="section-header">CART</h2>
-          <div class="cart-row">
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-          </div>
-          <div class="cart-items"></div>
-          <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">£0</span>
-          </div>
-          <button class="btn btn-primary btn-purchase" type="button">
-            PURCHASE
-          </button>
-        </div>
-      </div>
-  </main>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Guides - The Shroomies</title>
+    <link rel="stylesheet" href="styles.css">
 
+    <style>
+      
+       
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .guide {
+            background-color: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .guide img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .guide h2 {
+            margin-top: 0;
+        }
+        .guide p {
+            line-height: 1.6;
+        }
+        .guide ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+        .guide ul li {
+            margin-bottom: 0.5rem;
+        }
+   
+    </style>
+</head>
+<body>
+    <header id="app-header" class="main-header">
+        <script defer src="./scripts/header.js"></script>
+    </header>
+    <main class="main-content">
+      <div class="container">
+          <div class="guide">
+              <h2>Still Air Box</h2>
+              <img src="./images/guides/SAB-1.jpg" alt="home made still air box">
+              <p>This is where the description goes! So write what ever you fancy.</p>
+              <h3>Steps:</h3>
+              <ul>
+                  <li>Step 1: Buy a box.</li>
+                  <li>Step 2: Cut holes.</li>
+                  <li>Step 3: Use it.</li>
+              </ul>
+          </div>
+          <!-- Add more guides as needed -->
+      </div>
+    </main>
     <footer id="app-footer" class="main-footer">
-      <script defer src="./scripts/footer.js"></script>
+        <script defer src="./scripts/footer.js"></script>
     </footer>
-  </body>
+</body>
 </html>
