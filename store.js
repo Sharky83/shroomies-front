@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (basketButton) {
         basketButton.addEventListener('click', openCartModal);
     }
+
+    // Load cart data from local storage when the page loads
+    loadCartFromLocalStorage();
 });
 
 function addToCartClicked(event) {
@@ -29,6 +32,7 @@ function addToCartClicked(event) {
     const imageSrc = shopItem.querySelector('.shop-item-image').src;
     addItemToCart(title, price, imageSrc);
     updateCartTotal();
+    saveCartToLocalStorage();
 }
 
 function addItemToCart(title, price, imageSrc) {
@@ -65,6 +69,7 @@ function purchaseClicked() {
         cartItems.removeChild(cartItems.firstChild);
     }
     updateCartTotal();
+    saveCartToLocalStorage();
     closeCartModal();
 }
 
@@ -72,6 +77,7 @@ function removeCartItem(event) {
     const buttonClicked = event.target;
     buttonClicked.closest('.cart-row').remove();
     updateCartTotal();
+    saveCartToLocalStorage();
 }
 
 function quantityChanged(event) {
@@ -80,6 +86,7 @@ function quantityChanged(event) {
         input.value = 1;
     }
     updateCartTotal();
+    saveCartToLocalStorage();
 }
 
 function updateCartTotal() {
@@ -121,3 +128,31 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
+
+// Save cart data to local storage
+function saveCartToLocalStorage() {
+    const cartItems = document.querySelector('.cart-items');
+    const cartRows = cartItems.querySelectorAll('.cart-row');
+    const cart = [];
+    cartRows.forEach(cartRow => {
+        const title = cartRow.querySelector('.cart-item-title').innerText;
+        const price = cartRow.querySelector('.cart-price').innerText;
+        const imageSrc = cartRow.querySelector('.cart-item-image').src;
+        const quantity = cartRow.querySelector('.cart-quantity-input').value;
+        cart.push({ title, price, imageSrc, quantity });
+    });
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Load cart data from local storage
+function loadCartFromLocalStorage() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.forEach(item => {
+        addItemToCart(item.title, item.price, item.imageSrc);
+        const cartItems = document.querySelector('.cart-items');
+        const cartRows = cartItems.querySelectorAll('.cart-row');
+        const lastCartRow = cartRows[cartRows.length - 1];
+        lastCartRow.querySelector('.cart-quantity-input').value = item.quantity;
+    });
+    updateCartTotal();
+}
