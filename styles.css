@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 
 :root {
+    /* Define color variables */
     --primary-color: #56CCF2;
     --secondary-color: #2D9CDB;
     --tertiary-color: #F8B195;
@@ -12,16 +13,19 @@
     --nonary-color: #FECEAB;
     --denary-color: #FF847C;
 
+    /* Define font family */
     --ff-main: 'Raleway', sans-serif;
 }
 
 * {
+    /* Reset margin, padding, and box-sizing for all elements */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    /* Set the main font family and ensure the body takes up at least the full height of the viewport */
     font-family: var(--ff-main);
     display: flex;
     flex-direction: column;
@@ -29,6 +33,7 @@ body {
 }
 
 .main-header {
+    /* Style the main header */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,40 +42,48 @@ body {
 }
 
 nav ul {
+    /* Style the navigation list */
     display: flex;
     list-style: none;
 }
 
 .nav li {
+    /* Style the navigation list items */
     margin-right: 1em;
 }
 
 .nav a {
+    /* Style the navigation links */
     color: white;
     text-decoration: none;
     padding: .5em;
 }
 
 .nav a:hover {
+    /* Style the navigation links on hover */
     background-color: rgba(255, 255, 255, .3);
 }
 
 .shop-name {
+    /* Style the shop name */
     font-size: 2em;
     color: white;
 }
 
 .content-section {
+    /* Style the content sections */
     margin: 1em;
 }
 
 .container {
+    /* Style the main container */
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5em;
 }
 
 .section-header {
+    /* Style the section headers */
     font-weight: normal;
     color: #333;
     text-align: center;
@@ -78,6 +91,7 @@ nav ul {
 }
 
 .about-band-image {
+    /* Style the about band images */
     float: left;
     height: 200px;
     width: 200px;
@@ -85,6 +99,7 @@ nav ul {
     border-radius: 50%;
 }
 
+/* Footer Styles */
 .main-footer {
     background-color: #56CCF2;
     color: white;
@@ -92,17 +107,23 @@ nav ul {
     text-align: center;
 }
 
-.main-footer-container {
+.footer-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+}
+
+.shop-name {
+    font-size: 2em;
+    color: white;
+    margin: 0;
 }
 
 .footer-nav {
     display: flex;
     list-style: none;
     padding: 0;
-    margin-top: 1em;
+    margin: 0;
 }
 
 .footer-nav img {
@@ -111,7 +132,9 @@ nav ul {
     margin: 0 .5em;
 }
 
+
 .btn {
+    /* Style the buttons */
     text-align: center;
     vertical-align: middle;
     padding: .67em .67em;
@@ -120,6 +143,7 @@ nav ul {
 }
 
 .btn-header {
+    /* Style the header button */
     margin: .5em 15% 2em 15%;
     color: white;
     border: 2px solid #2D9CDB;
@@ -132,10 +156,12 @@ nav ul {
 }
 
 .btn-header:hover {
+    /* Style the header button on hover */
     background-color: rgba(255, 255, 255, .3);
 }
 
 .btn-primary {
+    /* Style the primary buttons */
     color: white;
     background-color: var(--primary-color);
     border: none;
@@ -144,47 +170,57 @@ nav ul {
 }
 
 .btn-primary:hover {
+    /* Style the primary buttons on hover */
     background-color: var(--secondary-color);
 }
 
 .course-row {
+    /* Style the course rows */
     border-bottom: 1px solid black;
     padding-bottom: 1em;
     margin-bottom: 1em;
 }
 
 .course-row:last-child {
+    /* Style the last course row */
     border: none;
 }
 
 .course-item {
+    /* Style the course items */
     display: inline-block;
     padding-right: .5em;
 }
 
 .course-date {
+    /* Style the course dates */
     color: #555;
     width: 11%;
     font-weight: bold;
 }
 
 .course-city {
+    /* Style the course cities */
     width: 24%;
 }
 
 .course-arena {
+    /* Style the course arenas */
     width: 42%;
 }
 
 .course-btn {
+    /* Style the course buttons */
     max-width: 19%;
 }
 
 .shop-item {
+    /* Style the shop items */
     margin: 30px;
 }
 
 .shop-item-title {
+    /* Style the shop item titles */
     display: block;
     width: 100%;
     text-align: center;
@@ -195,34 +231,40 @@ nav ul {
 }
 
 .shop-item-image {
+    /* Style the shop item images */
     height: 250px;
     width: 250px;
 }
 
 .shop-item-details {
+    /* Style the shop item details */
     display: flex;
     align-items: center;
     padding: 5px;
 }
 
 .shop-item-price {
+    /* Style the shop item prices */
     flex-grow: 1;
     color: #333;
 }
 
 .shop-items {
+    /* Style the shop items container */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .cart-header {
+    /* Style the cart headers */
     font-weight: bold;
     font-size: 1.25em;
     color: #333;
 }
 
 .cart-column {
+    /* Style the cart columns */
     display: flex;
     align-items: center;
     border-bottom: 1px solid black;
@@ -232,36 +274,43 @@ nav ul {
 }
 
 .cart-row {
+    /* Style the cart rows */
     display: flex;
 }
 
 .cart-item {
+    /* Style the cart items */
     width: 45%;
 }
 
 .cart-price {
+    /* Style the cart prices */
     width: 20%;
     font-size: 1.2em;
     color: #333;
 }
 
 .cart-quantity {
+    /* Style the cart quantities */
     width: 35%;
 }
 
 .cart-item-title {
+    /* Style the cart item titles */
     color: #333;
     margin-left: .5em;
     font-size: 1.2em;
 }
 
 .cart-item-image {
+    /* Style the cart item images */
     width: 75px;
     height: auto;
     border-radius: 10px;
 }
 
 .btn-danger {
+    /* Style the danger buttons */
     color: white;
     background-color: #EB5757;
     border: none;
@@ -270,10 +319,12 @@ nav ul {
 }
 
 .btn-danger:hover {
+    /* Style the danger buttons on hover */
     background-color: #CC4C4C;
 }
 
 .cart-quantity-input {
+    /* Style the cart quantity inputs */
     height: 34px;
     width: 50px;
     border-radius: 5px;
@@ -287,20 +338,24 @@ nav ul {
 }
 
 .cart-row:last-child {
+    /* Style the last cart row */
     border-bottom: 1px solid black;
 }
 
 .cart-row:last-child .cart-column {
+    /* Style the last cart column */
     border: none;
 }
 
 .cart-total {
+    /* Style the cart total */
     text-align: end;
     margin-top: 10px;
     margin-right: 10px;
 }
 
 .cart-total-title {
+    /* Style the cart total title */
     font-weight: bold;
     font-size: 1.5em;
     color: black;
@@ -308,11 +363,13 @@ nav ul {
 }
 
 .cart-total-price {
+    /* Style the cart total price */
     color: #333;
     font-size: 1.1em;
 }
 
 .btn-purchase {
+    /* Style the purchase button */
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
@@ -320,6 +377,7 @@ nav ul {
 
 /* Modal Styles */
 .modal {
+    /* Style the modal */
     display: none;
     position: fixed;
     z-index: 1;
@@ -333,6 +391,7 @@ nav ul {
 }
 
 .modal-content {
+    /* Style the modal content */
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
@@ -342,6 +401,7 @@ nav ul {
 }
 
 .close {
+    /* Style the close button */
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -350,12 +410,14 @@ nav ul {
 
 .close:hover,
 .close:focus {
+    /* Style the close button on hover and focus */
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
 .main-content {
+    /* Style the main content area */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
