@@ -132,7 +132,6 @@ nav ul {
     margin: 0 .5em;
 }
 
-
 .btn {
     /* Style the buttons */
     text-align: center;
@@ -421,4 +420,86 @@ nav ul {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+}
+
+/* Product Item Page Styles */
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+    margin-bottom: 2em;
+}
+
+.product-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details-container {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.product-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.product-price {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 1em;
+}
+
+.product-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.quantity-input {
+    width: 50px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 1em;
+}
+
+.product-category, .product-tags {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 1em;
+}
+
+.product-description, .shipping-info {
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+.product-description h3, .shipping-info h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.product-description p, .shipping-info p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
 }

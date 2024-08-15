@@ -4,28 +4,30 @@
         <title>Product Item Page</title>
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="styles.css">
-
         <script src="store.js" async></script>
     </head>
     <body>
         <header id="app-header" class="main-header">
             <script defer src="./scripts/header.js"></script>
-          </header>
+        </header>
         <main class="main-content">
-            <section class="container">
-                <img class="product-image" src="./images/spore1.png" alt="Product Image">
-                <div class="product-details">
+            <section class="container product-container">
+                <div class="product-image-container">
+                    <img class="product-image" src="./images/spore1.png" alt="Product Image">
+                </div>
+                <div class="product-details-container">
+                    <h2 class="product-title">Product Title</h2>
                     <span class="product-price">£12.99</span>
                     <div class="product-quantity">
                         <input type="number" class="quantity-input" value="1" min="1">
                         <button class="btn btn-primary" type="button">ADD TO BASKET</button>
                     </div>
-                </div>
-                <div class="product-category">
-                    <strong>Category:</strong> Spores
-                </div>
-                <div class="product-tags">
-                    <strong>Tags:</strong> Mushroom, Spore, Growth
+                    <div class="product-category">
+                        <strong>Category:</strong> Spores
+                    </div>
+                    <div class="product-tags">
+                        <strong>Tags:</strong> Mushroom, Spore, Growth
+                    </div>
                 </div>
                 <div class="product-description">
                     <h3>Description</h3>
@@ -39,6 +41,6 @@
         </main>
         <footer id="app-footer" class="main-footer">
             <script defer src="./scripts/footer.js"></script>
-          </footer>
+        </footer>
     </body>
 </html>
