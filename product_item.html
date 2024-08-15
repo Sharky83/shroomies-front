@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Item Page</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="store.js" async></script>
+    </head>
+    <body>
+        <header id="app-header" class="main-header">
+            <script defer src="./scripts/header.js"></script>
+          </header>
+        <section class="container">
+            <img class="product-image" src="./images/spore1.png" alt="Product Image">
+            <div class="product-details">
+                <span class="product-price">£12.99</span>
+                <div class="product-quantity">
+                    <input type="number" class="quantity-input" value="1" min="1">
+                    <button class="btn btn-primary" type="button">ADD TO BASKET</button>
+                </div>
+            </div>
+            <div class="product-category">
+                <strong>Category:</strong> Spores
+            </div>
+            <div class="product-tags">
+                <strong>Tags:</strong> Mushroom, Spore, Growth
+            </div>
+            <div class="product-description">
+                <h3>Description</h3>
+                <p>This is a high-quality spore product perfect for mushroom cultivation. It comes with detailed instructions and is suitable for both beginners and experienced growers.</p>
+            </div>
+            <div class="shipping-info">
+                <h3>Shipping Information</h3>
+                <p>We offer free standard shipping on all orders. Expedited shipping options are available at an additional cost. Please allow 3-5 business days for processing and shipping.</p>
+            </div>
+        </section>
+        <footer id="app-footer" class="main-footer">
+            <script defer src="./scripts/footer.js"></script>
+          </footer>
+    </body>
+</html>
