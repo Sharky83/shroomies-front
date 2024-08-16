@@ -108,10 +108,7 @@ function updateCartTotal() {
         cartTotalPriceElement.innerText = '£' + total.toFixed(2);
     }
 
-    const basketTotalPriceElement = document.querySelector('.basket-total-price');
-    if (basketTotalPriceElement) {
-        basketTotalPriceElement.innerText = '£' + total.toFixed(2);
-    }
+  
 }
 
 // Function to remove an item from the cart

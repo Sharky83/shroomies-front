@@ -12,16 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
             </ul>
         </nav>
         <h1 class="shop-name">The Shroomies</h1>
-        <button id="basket-button" class="btn btn-primary basket-button" type="button">
-            Basket Total: £<span class="basket-total-price">0.00</span>
+        <button id="cart-button" class="btn btn-primary cart-button" type="button">
+            cart Total: £<span class="cart-total-price">0.00</span>
         </button>
     `;
 
   header.innerHTML = headerContent;
 
-  // Add event listener for the basket button
-  const basketButton = document.getElementById("basket-button");
-  basketButton.addEventListener("click", function () {
+  // Add event listener for the cart button
+  const cartButton = document.getElementById("cart-button");
+  cartButton.addEventListener("click", function () {
     showCartModal();
   });
 
@@ -108,12 +108,8 @@ function updateCartTotal() {
   if (cartTotalPriceElement) {
     cartTotalPriceElement.innerText = '£' + total.toFixed(2);
   }
-
-  const basketTotalPriceElement = document.querySelector('.basket-total-price');
-  if (basketTotalPriceElement) {
-    basketTotalPriceElement.innerText = total.toFixed(2);
   }
-}
+
 
 function updateCartDisplay() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];

@@ -117,9 +117,9 @@ function updateCartTotal() {
         cartTotalPriceElement.innerText = '£' + total.toFixed(2);
     }
 
-    const basketTotalPriceElement = document.querySelector('.basket-total-price');
-    if (basketTotalPriceElement) {
-        basketTotalPriceElement.innerText = total.toFixed(2);
+    const cartTotalPriceElement = document.querySelector('.cart-total-price');
+    if (cartTotalPriceElement) {
+        cartTotalPriceElement.innerText = total.toFixed(2);
     }
 }
 
