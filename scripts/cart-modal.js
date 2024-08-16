@@ -26,7 +26,7 @@ function createCartModal() {
                 <strong>Total:</strong>
                 <span class="cart-total-price">$0.00</span>
             </div>
-            <button class="btn purchase-button">Purchase</button>
+            <button class="btn purchase-button">Proceed to checkout</button>
         </div>
     `;
 

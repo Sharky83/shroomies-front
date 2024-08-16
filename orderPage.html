@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form | The Shroomies</title>
+    <link rel="stylesheet" href="./orderPage.css">
+</head>
+<body>
+    <div class="order-form-container">
+        <form id="order-form" class="order-form">
+            <div class="form-step form-step-active">
+                <h2>Step 1: Delivery Details</h2>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">County</label>
+                    <input type="text" id="state" name="state" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip">Postal Code</label>
+                    <input type="text" id="zip" name="zip" required>
+                </div>
+                <button type="button" class="next-step">Next Step</button>
+            </div>
+            <div class="form-step">
+                <h2>Step 2: Payment Details</h2>
+                <div class="form-group">
+                    <label for="total-price">Amount Due</label>
+                    <input type="text" id="total-price" name="total-price" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="crypto-type">Select Cryptocurrency</label>
+                    <select id="crypto-type" name="crypto-type">
+                        <option value="bitcoin">Bitcoin</option>
+                        <option value="usdt">USDT</option>
+                        <option value="monero">Monero</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <img id="crypto-qr-code" src="path/to/bitcoin-qr-code.png" alt="QR Code for Crypto Payment" class="qr-code">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="copy-qr-button" onclick="copyCryptoAddress()">Copy Crypto Address</button>
+                </div>
+                <div class="form-group">
+                    <label for="crypto-address">Our Address</label>
+                    <input type="text" id="crypto-address" name="crypto-address" readonly>
+                </div>
+                <button type="button" class="prev-step">Previous Step</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nextStepButtons = document.querySelectorAll('.next-step');
+            const prevStepButtons = document.querySelectorAll('.prev-step');
+            const formSteps = document.querySelectorAll('.form-step');
+            const cryptoTypeSelect = document.getElementById('crypto-type');
+            const cryptoAddressInput = document.getElementById('crypto-address');
+            const cryptoQrCodeImg = document.getElementById('crypto-qr-code');
+
+            const cryptoDetails = {
+                bitcoin: {
+                    address: 'your-bitcoin-address',
+                    qrCode: './images/bitcoin-qr-code.png'
+                },
+                usdt: {
+                    address: 'your-usdt-address',
+                    qrCode: './images/usdt-qr-code.png'
+                },
+                monero: {
+                    address: 'your-monero-address',
+                    qrCode: './images/monero-qr-code.png'
+                }
+            };
+
+            let currentStep = 0;
+
+            nextStepButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    formSteps[currentStep].classList.remove('form-step-active');
+                    currentStep++;
+                    formSteps[currentStep].classList.add('form-step-active');
+                });
+            });
+
+            prevStepButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    formSteps[currentStep].classList.remove('form-step-active');
+                    currentStep--;
+                    formSteps[currentStep].classList.add('form-step-active');
+                });
+            });
+
+            cryptoTypeSelect.addEventListener('change', function() {
+                const selectedCrypto = cryptoTypeSelect.value;
+                cryptoAddressInput.value = cryptoDetails[selectedCrypto].address;
+                cryptoQrCodeImg.src = cryptoDetails[selectedCrypto].qrCode;
+            });
+
+            // Function to copy crypto address to clipboard
+            window.copyCryptoAddress = function() {
+                const cryptoAddress = cryptoAddressInput.value;
+                navigator.clipboard.writeText(cryptoAddress).then(() => {
+                    alert('Crypto address copied to clipboard');
+                }).catch(err => {
+                    console.error('Failed to copy crypto address: ', err);
+                });
+            };
+
+            // Function to update total price from shopping cart
+            function updateTotalPrice() {
+                const totalPriceElement = document.getElementById('total-price');
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                let total = 0;
+                cart.forEach(item => {
+                    const price = parseFloat(item.price.replace('£', ''));
+                    total += price * item.quantity;
+                });
+                totalPriceElement.value = '£' + total.toFixed(2);
+            }
+
+            updateTotalPrice();
+            cryptoTypeSelect.dispatchEvent(new Event('change')); // Initialize with default crypto details
+        });
+    </script>
+</body>
+</html>

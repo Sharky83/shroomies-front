@@ -114,11 +114,6 @@ function updateCartTotal() {
 
     const cartTotalPriceElement = document.querySelector('.cart-total-price');
     if (cartTotalPriceElement) {
-        cartTotalPriceElement.innerText = '£' + total.toFixed(2);
-    }
-
-    const cartTotalPriceElement = document.querySelector('.cart-total-price');
-    if (cartTotalPriceElement) {
         cartTotalPriceElement.innerText = total.toFixed(2);
     }
 }
