@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </nav>
         <h1 class="shop-name">The Shroomies</h1>
         <button id="cart-button" class="btn btn-primary cart-button" type="button">
-            cart Total: £<span class="cart-total-price">0.00</span>
+            cart total: <span class="cart-total-price">0.00</span>
         </button>
     `;
 
