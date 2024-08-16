@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const sporesItemsContainer = document.getElementById('spores-items');
             const liquidCultureItemsContainer = document.getElementById('liquid-culture-items');
 
+            // Create product elements and append them to the respective containers
             products.forEach(product => {
                 const productElement = createProductElement(product);
                 if (product.category === 'Spores') {
@@ -27,11 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loadCartFromLocalStorage();
 });
 
+// Function to create a product element
 function createProductElement(product) {
-    const productLink = document.createElement('a');
-    productLink.href = `product_item.html?id=${product.id}`;
-    productLink.className = 'shop-item-link';
-
     const productDiv = document.createElement('div');
     productDiv.className = 'shop-item';
 
@@ -62,11 +60,10 @@ function createProductElement(product) {
     productDiv.appendChild(productTitle);
     productDiv.appendChild(productDetails);
 
-    productLink.appendChild(productDiv);
-
-    return productLink;
+    return productDiv;
 }
 
+// Function to handle 'Add to Cart' button click
 function addToCartClicked(event) {
     event.preventDefault();
     const button = event.target;
@@ -79,6 +76,7 @@ function addToCartClicked(event) {
     saveCartToLocalStorage();
 }
 
+// Function to add an item to the cart
 function addItemToCart(title, price, imageSrc) {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -97,6 +95,7 @@ function addItemToCart(title, price, imageSrc) {
     updateCartDisplay();
 }
 
+// Function to handle purchase button click
 function purchaseClicked() {
     alert('Thank you for your purchase');
     localStorage.removeItem('cart');
@@ -104,6 +103,7 @@ function purchaseClicked() {
     updateCartDisplay();
 }
 
+// Function to update the total price in the cart
 function updateCartTotal() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     let total = 0;
@@ -123,6 +123,7 @@ function updateCartTotal() {
     }
 }
 
+// Function to update the cart display
 function updateCartDisplay() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartItemsContainer = document.querySelector('.cart-items');
@@ -149,6 +150,7 @@ function updateCartDisplay() {
     });
 }
 
+// Function to remove an item from the cart
 function removeCartItem(event) {
     const buttonClicked = event.target;
     const cartRow = buttonClicked.closest('.cart-row');
@@ -162,6 +164,7 @@ function removeCartItem(event) {
     updateCartDisplay();
 }
 
+// Function to handle quantity change in the cart
 function quantityChanged(event) {
     const input = event.target;
     if (isNaN(input.value) || input.value <= 0) {

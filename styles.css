@@ -262,19 +262,6 @@ nav ul {
   justify-content: space-around;
 }
 
-/* Remove underline from title, price, and add to cart button */
-.shop-item .shop-item-title,
-.shop-item .shop-item-price,
-.shop-item .shop-item-button {
-    text-decoration: none !important;
-}
-
-/* Additional specificity */
-.shop-item .shop-item-title a,
-.shop-item .shop-item-price a,
-.shop-item .shop-item-button a {
-    text-decoration: none !important;
-}
 .cart-header {
   /* Style the cart headers */
   font-weight: bold;
