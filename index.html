@@ -5,12 +5,14 @@
     <meta name="description" content="This is the description" />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./store.js"></script>
-    <script src="./scripts/cart-modal.js" defer></script>
+ 
 
   </head>
   <body>
     <header id="app-header" class="main-header">
       <script defer src="./scripts/header.js"></script>
+      <script type="module"  src="./scripts/cart-modal.js" defer></script>
+      <script type="module"  src="./scripts/payment-modal.js" defer></script>
     </header>
 
     <main class="main-content">
@@ -67,8 +69,7 @@
             <span class="course-item course-arena">Marriott Hotel</span>
             <button
               type="button"
-              class="course-item course-btn btn btn-primary"
-            >
+              class="course-item course-btn btn btn-primary">
               BUY
             </button>
           </div>
