@@ -1,5 +1,3 @@
-import { showPaymentModal } from './payment-modal.js';
-
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM fully loaded and parsed');
     createCartModal();
@@ -24,7 +22,7 @@ function createCartModal() {
             <div class="cart-items"></div>
             <div class="cart-total">
                 <strong>Total:</strong>
-                <span class="cart-total-price">$0.00</span>
+                <span class="cart-total-price">£0.00</span>
             </div>
             <button class="btn purchase-button">Proceed to checkout</button>
         </div>
@@ -43,7 +41,7 @@ function createCartModal() {
     // Add event listener to the purchase button
     const purchaseButton = cartModal.querySelector('.purchase-button');
     purchaseButton.addEventListener('click', function () {
-        showPaymentModal();
+        window.location.href = 'orderPage.html'; // Update with the correct path to your order page
     });
 }
 
@@ -107,8 +105,6 @@ function updateCartTotal() {
     if (cartTotalPriceElement) {
         cartTotalPriceElement.innerText = '£' + total.toFixed(2);
     }
-
-  
 }
 
 // Function to remove an item from the cart
