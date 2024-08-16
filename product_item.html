@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Product Item Page</title>
-        <meta name="description" content="This is the description">
-        <link rel="stylesheet" href="styles.css">
-        <script src="store.js" async></script>
-    </head>
-    <body>
-        <header id="app-header" class="main-header">
-            <script defer src="./scripts/header.js"></script>
-        </header>
-        <main class="main-content">
-            <section class="container product-container">
-                <div class="product-image-container">
-                    <img class="product-image" src="./images/spore1.png" alt="Product Image">
-                </div>
-                <div class="product-details-container">
-                    <h2 class="product-title">Product Title</h2>
-                    <span class="product-price">£12.99</span>
-                    <div class="product-quantity">
-                        <input type="number" class="quantity-input" value="1" min="1">
-                        <button class="btn btn-primary" type="button">ADD TO BASKET</button>
-                    </div>
-                    <div class="product-category">
-                        <strong>Category:</strong> Spores
-                    </div>
-                    <div class="product-tags">
-                        <strong>Tags:</strong> Mushroom, Spore, Growth
-                    </div>
-                </div>
-                <div class="product-description">
-                    <h3>Description</h3>
-                    <p>This is a high-quality spore product perfect for mushroom cultivation. It comes with detailed instructions and is suitable for both beginners and experienced growers.</p>
-                </div>
-                <div class="shipping-info">
-                    <h3>Shipping Information</h3>
-                    <p>We offer free standard shipping on all orders. Expedited shipping options are available at an additional cost. Please allow 3-5 business days for processing and shipping.</p>
-                </div>
-            </section>
-        </main>
-         <!-- Modal -->
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-          <span class="close-button" onclick="closeCartModal()">&times;</span>
-          <h2 class="section-header">CART</h2>
-          <div class="cart-row">
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-          </div>
-          <div class="cart-items"></div>
-          <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">£0</span>
-          </div>
-          <button class="btn btn-primary btn-purchase" type="button">
-            PURCHASE
-          </button>
+  <head>
+    <title>Product Item Page</title>
+    <meta name="description" content="This is the description" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="store.js" async></script>
+  </head>
+  <body>
+    <header id="app-header" class="main-header">
+      <script defer src="./scripts/header.js"></script>
+    </header>
+    <main class="main-content">
+      <section class="container product-container">
+        <div class="product-image-container">
+          <img
+            class="product-image"
+            src="./images/spore1.png"
+            alt="Product Image"
+          />
         </div>
-      </div>
+        <div class="product-details-container">
+          <h2 class="product-title">Product Title</h2>
+          <span class="product-price">£12.99</span>
+          <div class="product-quantity">
+            <input type="number" class="quantity-input" value="1" min="1" />
+            <button class="btn btn-primary" type="button">ADD TO BASKET</button>
+          </div>
+          <div class="product-category"><strong>Category:</strong> Spores</div>
+          <div class="product-tags">
+            <strong>Tags:</strong> Mushroom, Spore, Growth
+          </div>
+        </div>
+        <div class="product-description">
+          <h3>Description</h3>
+          <p>
+            This is a high-quality spore product perfect for mushroom
+            cultivation. It comes with detailed instructions and is suitable for
+            both beginners and experienced growers.
+          </p>
+        </div>
+        <div class="shipping-info">
+          <h3>Shipping Information</h3>
+          <p>
+            We offer free standard shipping on all orders. Expedited shipping
+            options are available at an additional cost. Please allow 3-5
+            business days for processing and shipping.
+          </p>
+        </div>
+      </section>
+    </main>
+    <!-- Modal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        createCartModal();
+      });
+    </script>
 
-
-
-        <footer id="app-footer" class="main-footer">
-            <script defer src="./scripts/footer.js"></script>
-        </footer>
-    </body>
+    <footer id="app-footer" class="main-footer">
+      <script defer src="./scripts/footer.js"></script>
+    </footer>
+  </body>
 </html>
