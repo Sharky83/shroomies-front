@@ -55,8 +55,8 @@ function showCartModal() {
 
 // Function to load cart data from local storage and update the cart display
 function loadCartFromLocalStorage() {
-    updateCartTotal();
     updateCartDisplay();
+    updateCartTotal();
 }
 
 // Function to update the cart display
@@ -117,8 +117,8 @@ function removeCartItem(event) {
     cart = cart.filter(item => item.title !== title);
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    updateCartTotal();
     updateCartDisplay();
+    updateCartTotal();
 }
 
 // Function to handle quantity changes
@@ -138,6 +138,6 @@ function quantityChanged(event) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    updateCartTotal();
     updateCartDisplay();
+    updateCartTotal();
 }
