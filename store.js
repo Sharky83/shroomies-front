@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
+    
     // Load products from JSON file
     fetch('./products.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(products => {
+            console.log('Products loaded:', products);
             const sporesItemsContainer = document.getElementById('spores-items');
             const liquidCultureItemsContainer = document.getElementById('liquid-culture-items');
 
@@ -74,6 +82,7 @@ function addToCartClicked(event) {
     addItemToCart(title, price, imageSrc);
     updateCartTotal();
     saveCartToLocalStorage();
+    showCartModal(); // Show the cart modal when an item is added
 }
 
 // Function to add an item to the cart
