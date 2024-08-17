@@ -109,3 +109,20 @@ form label {
 .form-group-buttons button:last-child {
   margin-right: 0; /* Remove the margin from the last button */
 }
+
+/* Form Start */
+.form-group-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+}
+
+.cancel-button {
+  width: 100px;
+}
+ /* Form End */
