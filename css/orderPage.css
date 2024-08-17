@@ -83,3 +83,29 @@ form label {
   color: #555;
 }
 
+/* Style for the copy button */
+.copy-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid #56ccf2; 
+  color: #56ccf2; 
+  cursor: pointer;
+  margin-bottom: 10px; /* Gap below the copy button */
+  width: auto; /* Width of the content */
+  display: inline-block; /* Ensure the button width is based on content */
+
+}
+
+.copy-button:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Add a slight overlay on hover */
+}
+
+/* Add a small gap between the other buttons */
+.form-group-buttons button {
+  margin-right: 10px;
+}
+
+.form-group-buttons button:last-child {
+  margin-right: 0; /* Remove the margin from the last button */
+}
