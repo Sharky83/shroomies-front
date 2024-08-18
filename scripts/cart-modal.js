@@ -141,3 +141,37 @@ function quantityChanged(event) {
     updateCartDisplay();
     updateCartTotal();
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+        const cryptoSelect = document.getElementById('crypto');
+        const qrCodeImage = document.getElementById('qr-code');
+        const cryptoAddressInput = document.getElementById('crypto-address');
+
+        const cryptoData = {
+          btc: {
+            qrCode: './images/btc-qr-code.png',
+            address: '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa'
+          },
+          usdt: {
+            qrCode: './images/usdt-qr-code.png',
+            address: '3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy'
+          },
+          monero: {
+            qrCode: './images/monero-qr-code.png',
+            address: '44AFFq5kSiGBoZ...'
+          }
+        };
+
+        cryptoSelect.addEventListener('change', function() {
+          const selectedCrypto = cryptoSelect.value;
+          if (cryptoData[selectedCrypto]) {
+            qrCodeImage.src = cryptoData[selectedCrypto].qrCode;
+            cryptoAddressInput.value = cryptoData[selectedCrypto].address;
+          } else {
+            qrCodeImage.src = './images/default-qr-code.png';
+            cryptoAddressInput.value = '';
+          }
+        });
+      });
+
+      
