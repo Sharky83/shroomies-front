@@ -2,42 +2,42 @@
     {
       "id": 1,
       "title": "Item 1",
-      "price": "£12.99",
+      "price": "£10",
       "image": "./images/spore1.webp",
       "category": "Spores"
     },
     {
       "id": 2,
       "title": "Item 2",
-      "price": "£14.99",
+      "price": "£5",
       "image": "./images/spore2.webp",
       "category": "Spores"
     },
     {
       "id": 3,
       "title": "Item 3",
-      "price": "£9.99",
+      "price": "£5",
       "image": "./images/spore3.webp",
       "category": "Spores"
     },
     {
       "id": 4,
       "title": "Item 4",
-      "price": "£19.99",
+      "price": "£5",
       "image": "./images/spore4.webp",
       "category": "Spores"
     },
     {
       "id": 5,
       "title": "LC-2",
-      "price": "£6.99",
+      "price": "£5",
       "image": "./images/LiquidCulture2.png",
       "category": "Liquid Culture"
     },
     {
       "id": 6,
       "title": "LC-1",
-      "price": "£19.99",
+      "price": "£10.00",
       "image": "./images/LiquidCulture1.png",
       "category": "Liquid Culture"
     }
